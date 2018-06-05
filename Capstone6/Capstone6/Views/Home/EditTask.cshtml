@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "EditTask";
+}
+
+<h2>Edit Task</h2><br />
+<h2>Task Details</h2>
+
+@model Capstone6.Models.Task
+
+<form action="/Home/SaveEditedTask" method="post">
+    User Name:<input type="text" value="@Model.UserName" name="UserName" /><br />
+    Task Name:<input type="text" value="@Model.TaskName" name="TaskName" /><br />
+    Item Description:<input type="text" value="@Model.TaskDescription" name="TaskDescription" /><br />
+    Item Quantity:<input type="text" value="@Model.DueDate" name="DueDate" /><br />
+    Item Price:<input type="text" value="@Model.Status" name="Status" /><br />
+    <input type="submit" value="Save Updates" /><br />
+</form>
+

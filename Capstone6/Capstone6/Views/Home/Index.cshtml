@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h2>@ViewBag.Message</h2>
+<h1>Welcome to the Task List Manager</h1><br/>
+<h4>Please Sign in</h4>
+<form action="/Home/SignIn" method="post">
+    User Name:<input type="text"name="UserName"/><br/>
+    Password:<input type="password" name="Password"/><br/>
+    <input type="submit" value="Sign In"/><br/>
+</form>
+<span id="error">@ViewBag.Error</span>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "UserTask";
+}
+
+<h1>User Tasks</h1>
+<h2>@ViewBag.AuthorizedUser.UserName's Task List</h2>
+<table class="table">
+
+    <tr>
+        <th>Task Name</th>
+        <th>Task Description</th>
+        <th>Task Due Date</th>
+        <th> Task Status</th>
+    </tr>
+    @foreach (var task in ViewBag.UserTasks)
+    {
+    <tr>
+        <td>@task.TaskName</td>
+        <td>@task.TaskDescription</td>
+        <td>@task.DueDate</td>
+        <td>@task.Status</td>
+        <td><a href="/Home/ChangeStatus?Status=@task.Status&TaskName=@task.TaskName" onclick="return confirm('Mark Complete?')">Update Status</a></td>
+        <td><a href="/Home/EditTask?TaskName=@task.TaskName">Edit</a></td>
+        <td><a href="/Home/DeleteTask?TaskName=@task.TaskName" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">
+    <span class="glyphicon glyphicon-trash"></span>Delete</a></td>
+    </tr>
+    }
+</table>
+
+<a href="/Home/AddTask">Add New Task</a><a>    </a><a href="/Home/Logout">Logout</a>
+
+
+
+
